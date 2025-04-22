@@ -385,7 +385,7 @@ def evaluate_model(eegmodel, imgmodel, dataloader, device, text_features_all, im
             
             print(labels) # yeh humne add kiya hai
             
-            if epoch % 2 == 0:  #humne 10 ko 1 kiya hai 
+            if epoch % 10 == 0:  #humne 10 ko 1 kiya hai 
                 z = eeg_features
                 x_rec = vae.decode(z).sample
                 image_rec = image_processor.postprocess(x_rec, output_type='pil')
