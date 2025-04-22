@@ -1,0 +1,8 @@
+{
+    "data_path": "/DATA/deep_learning/weights/EEG_Image_decode/Preprocessed_data_250Hz",
+    "img_directory_training": "/DATA/deep_learning/EEG_Image_decode/osfstorage-archive/training_images",
+    
+    "img_directory_test": "/DATA/deep_learning/EEG_Image_decode/osfstorage-archive/test_images",
+    "features_path":"/home/ldy/Workspace/THINGS/CLIP"
+}
+

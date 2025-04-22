@@ -1,0 +1,8 @@
+{
+    "data_path": "data/weights/EEG_Image_decode/Preprocessed_data_250Hz",
+    "img_directory_training": "data/osfstorage-archive/training_images",
+    
+    "img_directory_test": "data/osfstorage-archive/test_images",
+    "features_path":"/home/ldy/Workspace/THINGS/CLIP"
+}
+
