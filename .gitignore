@@ -3,5 +3,6 @@ logs
 data
 environments
 others
+wandb
 
 final/models

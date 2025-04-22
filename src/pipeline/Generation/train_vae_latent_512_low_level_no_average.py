@@ -458,18 +458,17 @@ def main_train_loop(sub, current_time, eeg_model, img_model, train_dataloader, t
         train_save_dir = f'output/images/{current_time}_vae_train_imgs'
         train_loss, train_accuracy, features_tensor = train_model(eeg_model, img_model, train_dataloader, optimizer, device, text_features_train_all, img_features_train_all, save_dir=train_save_dir, epoch=epoch)
 
-        # HUMNE COMMENTED THIS OUT. PLEASE UNCOMMENT BEFORE ACTUAL TRAINING!!!
-        # if (epoch +1) % 2 == 0:            
-        #     # Get the current time and format it as a string (e.g., '2024-01-17_15-30-00')                  
-        #     if config.insubject==True:       
-        #         os.makedirs(f"output/models/generation-contrast/{config.encoder_type}/{sub}/{current_time}", exist_ok=True)             
-        #         file_path = f"output/models/generation-contrast/{config.encoder_type}/{sub}/{current_time}/{epoch+1}.pth"
-        #         torch.save(eeg_model.state_dict(), file_path)            
-        #     else:                
-        #         os.makedirs(f"output/models/generation-contrast/across/{config.encoder_type}/{current_time}", exist_ok=True)             
-        #         file_path = f"output/models/generation-contrast/across/{config.encoder_type}/{current_time}/{epoch+1}.pth"
-        #         torch.save(eeg_model.state_dict(), file_path)
-        #     print(f"model saved in {file_path}!")
+        if (epoch +1) % 5 == 0:            
+            # Get the current time and format it as a string (e.g., '2024-01-17_15-30-00')                  
+            if config.insubject==True:       
+                os.makedirs(f"output/models/generation-contrast/{config.encoder_type}/{sub}/{current_time}", exist_ok=True)             
+                file_path = f"output/models/generation-contrast/{config.encoder_type}/{sub}/{current_time}/{epoch+1}.pth"
+                torch.save(eeg_model.state_dict(), file_path)            
+            else:                
+                os.makedirs(f"output/models/generation-contrast/across/{config.encoder_type}/{current_time}", exist_ok=True)             
+                file_path = f"output/models/generation-contrast/across/{config.encoder_type}/{current_time}/{epoch+1}.pth"
+                torch.save(eeg_model.state_dict(), file_path)
+            print(f"model saved in {file_path}!")
         
         train_losses.append(train_loss)
         train_accuracies.append(train_accuracy)
