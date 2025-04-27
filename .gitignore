@@ -6,3 +6,6 @@ others
 wandb
 
 final/models
+
+ViT-H-14_features_test.pt
+ViT-H-14_features_train.pt

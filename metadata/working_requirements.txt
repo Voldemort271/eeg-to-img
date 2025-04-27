@@ -36,7 +36,8 @@ cfgv==3.4.0
 charset-normalizer==3.4.1
 click==8.1.7
 # clip==1.0
-cloudpathlib==0.16.0clip==1.0
+cloudpathlib==0.16.0
+
 ConfigArgParse==1.7
 contexttimer==0.3.3
 contourpy==1.1.1

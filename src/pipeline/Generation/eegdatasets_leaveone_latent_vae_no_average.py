@@ -25,7 +25,7 @@ device = "cuda:0" if torch.cuda.is_available() else "cpu"
 import json
 
 # Load the configuration from the JSON file
-config_path = "src/pipeline/Generation/data_config.json"
+config_path = "/DATA/deep_learning/eeg-to-img/src/pipeline/Generation/data_config.json"
 with open(config_path, "r") as config_file:
     config = json.load(config_file)
 
@@ -391,7 +391,8 @@ class EEGDataset():
 if __name__ == "__main__":
     # Instantiate the dataset and dataloader
     # data_path = "/home/ldy/Workspace/THINGS/EEG/osfstorage-archive"  # Replace with the path to your data
-    data_path="data/weights/EEG_Image_decode/Preprocessed_data_250Hz"
+    #paths changed from realtive to absolute humne likha
+    data_path="/DATA/deep_learning/eeg-to-img/data/weights/EEG_Image_decode/Preprocessed_data_250Hz"
     data_path = data_path
     train_dataset = EEGDataset(data_path, subjects = ['sub-01'], train=True)    
     test_dataset = EEGDataset(data_path, subjects = ['sub-01'], train=False)
